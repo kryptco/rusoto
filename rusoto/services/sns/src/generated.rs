@@ -1622,7 +1622,7 @@ impl MapStringToStringSerializer {
         obj: &::std::collections::HashMap<String, String>,
     ) {
         for (index, (key, value)) in obj.iter().enumerate() {
-            let prefix = format!("{}.{}", name, index + 1);
+            let prefix = format!("{}.entry.{}", name, index + 1);
             params.put(&format!("{}.{}", prefix, "key"), &key);
             params.put(&format!("{}.{}", prefix, "Value"), &value);
         }

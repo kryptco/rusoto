@@ -199,7 +199,7 @@ fn generate_map_serializer(service: &Service, shape: &Shape) -> String {
 
     // the key is always a string type
     parts.push(format!("for (index, (key, value)) in obj.iter().enumerate() {{
-            let prefix = format!(\"{{}}.{{}}\", name, index+1);
+            let prefix = format!(\"{{}}.entry.{{}}\", name, index+1);
             params.put(&format!(\"{{}}.{{}}\", prefix, \"{key_name}\"), &key);",
             key_name = key_name(service, shape),
         ));
